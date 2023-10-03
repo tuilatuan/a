@@ -1,0 +1,76 @@
+:root {
+  /* Gap, MaxWidth Of Page, Container-Fluid, Container */
+  --gap: 30px;
+
+  --max-width-page: 2560px;
+  --max-width-container-fluid: 1920px;
+  --max-width-container: calc(1400px + calc(var(--gap) * 2)); // 1200px tuỳ thuộc bản thiết kế */
+
+  /* Colors Variable Demo*/
+  --main-cl: #ee4266;
+  --yellow-cl: ##ffd700;
+  --white-cl: #ffffff;
+  --black-cl: #141414;
+  --gray-cl: #666666;
+  --green-cl: #11bd99;
+  --blue-cl: #00aabb;
+
+  // Fontsize - Lineheight Variable Demo
+  --fs-h1: 6.4rem;
+  --lh1-h1: 5.4rem;
+
+  --fs-h2: 5.6rem;
+  --lh1-h2: 4.5rem;
+
+  --fs-h3: 4.2rem;
+  --lh-h3: 4.2rem;
+
+  --fs-h4: 3.2rem;
+  --lh-h4: 3.5rem;
+
+  --fs-h5: 2.6rem;
+  --lh-h5: 3.1rem;
+
+  --fs-body: 1.8rem;
+  --lh-body: 2rem;
+
+  // General Variable Demo
+  --height-header: 88px;
+  --height-button: 42px;
+  --pd-section: 70px;
+
+  // Timing Transition Variable Demo
+  --t: 0.4s;
+  --cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
+  --brus: 10px;
+  // Responsive
+  @include md {
+    --container-max-width: 1140px;
+  }
+  @include sm {
+    --container-max-width: 960px; // hoặc max-width: 100% tuỳ yêu cầu
+  }
+  @include xs {
+    --container-max-width: 720px; // hoặc max-width: 100% tuỳ yêu cầu
+    --gap: 16px;
+
+    // DEMO
+    --fs-h1: 6rem;
+    --lh-h1: 6.8rem;
+
+    --fs-h2: 5.5rem;
+    --lh-h2: 6.2rem;
+
+    --fs-h3: 4.2rem;
+    --lh-h3: 4.2rem;
+
+    --fs-h4: 3.2rem;
+    --lh-h4: 3.5rem;
+
+    --fs-body: 1.6rem;
+    --lh-body: 1.9rem;
+  }
+  @include xxs {
+    --container-max-width: 100%;
+  }
+}

@@ -1,0 +1,158 @@
+.header {
+  height: 90px;
+  background: var(--black-cl);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &__left {
+    @include mid(true);
+    gap: 20px;
+  }
+  &__logo {
+    background: var(--white-cl);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    .img {
+      width: 75px;
+    }
+  }
+  &__navbar {
+    &-sitemenu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .item {
+        padding: 15px 12px;
+        position: relative;
+        .nameitem {
+          color: var(--white-cl);
+          text-transform: uppercase;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 7px;
+          @include transition(var(--t));
+          .arrow {
+            @include transition(var(--t));
+            fill: var(--white-cl);
+          }
+        }
+        .dropmenu {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          position: absolute;
+          z-index: 2;
+          top: 45px;
+          width: 100%;
+          background: #252525;
+          @include transition(var(--t));
+          margin-top: 20px;
+          border-top: 2px solid var(--main-cl);
+          li {
+            @include transition(var(--t));
+            padding: 7px 12px;
+
+            a {
+              @include transition(var(--t));
+              color: var(--white-cl);
+              padding: 7px 12px;
+            }
+            &:hover {
+              @include transition(var(--t));
+              background: #fff;
+              a {
+                @include transition(var(--t));
+                color: var(--black-cl);
+              }
+            }
+          }
+        }
+        &:hover {
+          .nameitem {
+            @include transition(var(--t));
+            color: var(--main-cl);
+            .arrow {
+              @include transition(var(--t));
+              fill: var(--main-cl);
+            }
+          }
+          .dropmenu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            @include transition(var(--t));
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-width: 115px;
+    &--icon {
+      position: relative;
+      padding: 10px;
+      svg {
+        height: 19px;
+        width: 19px;
+        fill: #fff;
+        @include transition(var(--t));
+      }
+      &:hover {
+        svg {
+          @include transition(var(--t));
+          fill: var(--main-cl);
+        }
+      }
+      .number {
+        position: absolute;
+        top: -10px;
+        right: -15px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: red;
+        @include mid(true);
+        color: var(--white-cl);
+      }
+      &.btnshow_search {
+        .icon_close {
+          display: none;
+        }
+      }
+      &.active {
+        .icon_search {
+          display: none;
+        }
+        .icon_close {
+          display: block;
+        }
+      }
+    }
+    &--search {
+      width: 0px;
+      height: 46px;
+      position: absolute;
+      left: 50px;
+      top: 50%;
+      @include transform(translate(-100%, -50%));
+      @include visible(0);
+      &.active {
+        width: 350px;
+        left: -5px;
+        @include visible(1);
+      }
+    }
+  }
+}

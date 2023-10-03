@@ -1,0 +1,23 @@
+// SCSS DEMO (Xoá khi bắt đầu dự án)
+.homepage {
+  .main {
+    .sale {
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      &__right {
+        flex: 1;
+
+        &--list {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
